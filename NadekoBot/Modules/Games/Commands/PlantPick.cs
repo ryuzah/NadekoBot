@@ -77,7 +77,7 @@ namespace NadekoBot.Modules.Games.Commands
                     foreach(var msgToDelete in msgs)
                         await msgToDelete.Delete().ConfigureAwait(false);
 
-                    await FlowersHandler.AddFlowersAsync(e.User, "Picked a flower.", 1, true).ConfigureAwait(false);
+                    await FlowersHandler.AddFlowersAsync(e.User, "Picked a flower.", 1000, true).ConfigureAwait(false);
                     var msg = await e.Channel.SendMessage($"**{e.User.Name}** picked a {NadekoBot.Config.CurrencyName}!").ConfigureAwait(false);
                     ThreadPool.QueueUserWorkItem(async (state) =>
                     {
